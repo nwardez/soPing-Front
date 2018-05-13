@@ -1,0 +1,21 @@
+<div style="text-align:center">
+  <mat-toolbar color="primary" class="align-header">
+    <!--<button mat-icon-button [mat-menu-trigger-for]="menu">-->
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>home</mat-icon>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="">Accueil</button>
+        <button mat-menu-item routerLink="/president">Espace président</button>
+        <button mat-menu-item routerLink="/tresorier">Espace trésorier</button>
+        <button mat-menu-item routerLink="/adherent">Espace adhérent</button>
+      </mat-menu>
+    </button>
+    <span>ESPACE ASSOCIATIF</span>
+    <button mat-icon-button routerLink="/president">
+      <mat-icon>perm_identity</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  
+
+  

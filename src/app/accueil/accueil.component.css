@@ -1,0 +1,23 @@
+.example-card {
+    max-width: 800px;
+    margin: 20px;
+  }
+  
+  .example-header-image {
+    background-image: url(/assets/raquette.png);
+    background-size: cover;
+  }
+
+  .mep {
+      display: flex;
+      flex-direction: row;
+
+  }
+
+  .presentation {
+      margin: 20px;
+  }
+
+  p {
+      text-align: left;
+  }

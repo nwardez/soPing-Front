@@ -1,0 +1,45 @@
+.footer {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.footer-element {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.map {
+    max-width: 40%;
+	height: auto;
+}
+
+.footer-element-reseaux {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-element-sponsors {
+    text-align: center;
+}
+
+.footer-element-liens {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.icones {
+    display: flex;
+    flex-direction: row;
+}
+
+.reseaux {
+    max-width: 40%;
+	height: auto;
+}
+

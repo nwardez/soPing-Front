@@ -1,0 +1,40 @@
+<mat-card>
+  
+
+  <!--Filtre pour recherche adherents -->
+  <mat-form-field>
+    <input matInput (keyup)="filtrerTableau($event.target.value)" placeholder="Recherche d'un adhérent">
+  </mat-form-field>
+  <!-- Affichage tableau des adhérents -->
+  <mat-table [dataSource]="dataAdherents" matSort>
+      
+    <ng-container matColumnDef ="noLicence">
+      <mat-header-cell *matHeaderCellDef mat-sort-header><strong>Licence</strong></mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.noLicence}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef ="nom">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Nom</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.nom | uppercase}}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef ="prenom">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Prenom</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.prenom | premiereLettreEnCapitale }}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef ="code postal">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Licence</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.codePostal}}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef ="commune">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Commune</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.commune}}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef ="portable">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Portable</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.telPortable}}</mat-cell>
+      </ng-container>
+      <mat-header-row *matHeaderRowDef="colonnesAdherents"></mat-header-row>
+      <mat-row *matRowDef="let row; columns:colonnesAdherents" ></mat-row>
+  </mat-table>
+  <mat-paginator #paginator [pageSize]=10 [pageSizeOptions]="[5,10,20]" [showFirstLastButtons]="true" >
+  </mat-paginator>
+</mat-card>
