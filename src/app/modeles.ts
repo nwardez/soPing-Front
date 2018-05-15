@@ -1,17 +1,17 @@
-export interface Adherent {
-    id?: number;
+export class Adherent {
+    public id?: number;
     nom: string;
     prenom: string;
-    noLicence: string;
-    dateDeNaissance: Date;
-    categorie: string;
+    //noLicence: string;
+    dateDeNaissance: string;
+    //categorie: string;
     adresse: string;
     codePostal: string;
     commune: string;
     telDomicile: string;
     telPortable: string;
     mail: string;
-    dateAdhesion: Date;
+    //dateAdhesion: string;
 }
 
 export interface Cotisation {

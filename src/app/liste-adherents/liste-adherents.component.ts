@@ -4,6 +4,8 @@ import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 import { AdherentService } from '../adherent.service';
 import { ApiService } from '../api.service';
 import { MesPipes } from '../mesPipes';
+import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-liste-adherents',
@@ -12,13 +14,14 @@ import { MesPipes } from '../mesPipes';
 })
 export class ListeAdherentsComponent implements OnInit {
 
-  colonnesAdherents=['noLicence','nom','prenom','code postal','commune','portable'];
+  colonnesAdherents=['id','nom','prenom','code postal','commune','portable','editer','supprimer'];
   dataAdherents;
 
   @ViewChild(MatPaginator) paginator:MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private adherentService: AdherentService) { }
+  constructor(private adherentService: AdherentService,private route: ActivatedRoute,
+    private router: Router) { }
 
 
 
@@ -32,12 +35,25 @@ export class ListeAdherentsComponent implements OnInit {
     );
   }
 
+  delete (id:number) {
+    this.adherentService.supprimerAdherent(id).subscribe(
+      ()=>{
+        this.ngOnInit();
+        this.router.navigate([''], {relativeTo: this.route});
+      });
+  }
+
+  update() {
+
+  }
+
     filtrerTableau(valeur: string) {
       valeur= valeur.trim();
       valeur=valeur.toLowerCase();
       this.dataAdherents.filter=valeur;
-
   }
+
+  
 
 
 

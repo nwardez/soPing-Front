@@ -5,22 +5,25 @@
     padding: 10px;
     margin-left: 20px;
     margin-right: 20px;
+    background-color: rgb(157, 157, 218);
 }
 
 .footer-element {
     display: flex;
     flex-direction: column;
     text-align: left;
+    font-size: 0.8em;
 }
 
 .map {
-    max-width: 40%;
+    max-width:20%;
 	height: auto;
 }
 
 .footer-element-reseaux {
     display: flex;
     flex-direction: column;
+    font-size: 0.8em;
 }
 
 .footer-element-sponsors {
@@ -31,6 +34,7 @@
     display: flex;
     flex-direction: column;
     text-align: left;
+    font-size: 0.8em;
 }
 
 .icones {

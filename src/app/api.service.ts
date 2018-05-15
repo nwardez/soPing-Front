@@ -8,13 +8,14 @@ export class ApiService {
 
   private url="http://localhost:8080/";
 
-  adherent: Adherent;
-  selectedAdherent: Adherent;
+  //adherent: Adherent;
+  //selectedAdherent: Adherent;
 
   constructor(private http: HttpClient) { }
 
   // Création d'un nouvel adhérent
   creerAdherent(adherent: Adherent):Observable<Adherent> {
+    console.log("Api ok");
     return this.http.post<Adherent>(this.url+'adherent',adherent);
   }
 
@@ -31,7 +32,7 @@ export class ApiService {
 
   //Supprime un adherent en fonction de son Id
   supprimerAdherent(idAdherent: number): Observable<Adherent> {
-    return this.http.delete<Adherent>(this.url+'delete/'+ idAdherent);
+    return this.http.delete<Adherent>(this.url+'/adherent/delete/'+ idAdherent);
   }
 
   editerAdherent(adherent: Adherent, id: number): Observable<Adherent> {

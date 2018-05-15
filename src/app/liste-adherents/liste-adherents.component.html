@@ -8,9 +8,9 @@
   <!-- Affichage tableau des adhérents -->
   <mat-table [dataSource]="dataAdherents" matSort>
       
-    <ng-container matColumnDef ="noLicence">
-      <mat-header-cell *matHeaderCellDef mat-sort-header><strong>Licence</strong></mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.noLicence}}</mat-cell>
+    <ng-container matColumnDef ="id">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>No adhérent</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.id}}</mat-cell>
     </ng-container>
     <ng-container matColumnDef ="nom">
         <mat-header-cell *matHeaderCellDef mat-sort-header>Nom</mat-header-cell>
@@ -21,7 +21,7 @@
           <mat-cell *matCellDef="let element">{{element.prenom | premiereLettreEnCapitale }}</mat-cell>
       </ng-container>
       <ng-container matColumnDef ="code postal">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>Licence</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Code postal</mat-header-cell>
         <mat-cell *matCellDef="let element">{{element.codePostal}}</mat-cell>
       </ng-container>
       <ng-container matColumnDef ="commune">
@@ -31,6 +31,14 @@
       <ng-container matColumnDef ="portable">
         <mat-header-cell *matHeaderCellDef mat-sort-header>Portable</mat-header-cell>
         <mat-cell *matCellDef="let element">{{element.telPortable}}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef ="editer">
+        <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
+        <mat-cell *matCellDef="let element"><button class="edit" (click)="update()">Editer</button></mat-cell>
+      </ng-container>
+      <ng-container matColumnDef ="supprimer">
+        <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
+        <mat-cell *matCellDef="let element"><button class="suppr" (click)="delete(element.id)">Supprimer</button></mat-cell>
       </ng-container>
       <mat-header-row *matHeaderRowDef="colonnesAdherents"></mat-header-row>
       <mat-row *matRowDef="let row; columns:colonnesAdherents" ></mat-row>

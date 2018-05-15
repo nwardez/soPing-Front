@@ -7,13 +7,15 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class AdherentService {
 
-  private adherentSelectionne: Adherent;
-  private id;
+  
 
   constructor(private api: ApiService, private http: HttpClient) { }
 
+  private adherentSelectionne: Adherent;
+  private id;
 
   creerAdherent(adherent: Adherent):Observable<Adherent> {
+    console.log("service OK");
     return this.api.creerAdherent(adherent);
   }
 

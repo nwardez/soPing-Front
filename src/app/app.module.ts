@@ -23,6 +23,9 @@ import { MatNativeDateModule } from '@angular/material';
 import { TresorierComponent } from './tresorier/tresorier.component';
 import { AdherentComponent } from './adherent/adherent.component';
 import { PresidentEvenementComponent } from './president-evenement/president-evenement.component';
+import { FormsModule } from '@angular/forms';
+import { ListeAdhesionsComponent } from './liste-adhesions/liste-adhesions.component';
+import { SaisonsComponent } from './saisons/saisons.component';
 
 
 @NgModule({
@@ -39,14 +42,17 @@ import { PresidentEvenementComponent } from './president-evenement/president-eve
     PresidentComponent,
     TresorierComponent,
     AdherentComponent,
-    PresidentEvenementComponent
+    PresidentEvenementComponent,
+    ListeAdhesionsComponent,
+    SaisonsComponent
   ],
   imports: [
     BrowserModule,
     MatModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    RoutingModule
+    RoutingModule,
+    FormsModule
   ],
   exports: [
     MatModule
@@ -54,8 +60,7 @@ import { PresidentEvenementComponent } from './president-evenement/president-eve
   providers: [
     HttpClient,
     AdherentService,
-    ApiService,
-    MatNativeDateModule
+    ApiService
   ],
   bootstrap: [AppComponent]
 })
