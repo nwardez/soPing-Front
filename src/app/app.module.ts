@@ -22,7 +22,7 @@ import { MatNativeDateModule } from '@angular/material';
 import { TresorierComponent } from './tresorier/tresorier.component';
 import { AdherentComponent } from './adherent/adherent.component';
 import { PresidentEvenementComponent } from './president-evenement/president-evenement.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListeAdhesionsComponent } from './liste-adhesions/liste-adhesions.component';
 import { SaisonsComponent } from './saisons/saisons.component';
 import { FicheAdherentComponent } from './fiche-adherent/fiche-adherent.component';
@@ -30,6 +30,7 @@ import { AdherentEvenementComponent } from './adherent-evenement/adherent-evenem
 import { PopupComponent } from './popup/popup.component';
 import { ListeSaisonComponent } from './liste-saison/liste-saison.component';
 import { UnderConstructionComponent } from './under-construction/under-construction.component';
+
 
 
 @NgModule({
@@ -60,7 +61,8 @@ import { UnderConstructionComponent } from './under-construction/under-construct
     BrowserAnimationsModule,
     HttpClientModule,
     RoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     MatModule

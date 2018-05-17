@@ -1,40 +1,49 @@
 
 <div class="contenu">
-<form #f (ngSubmit)="onSubmit(f)" class="example-form">
+<form  (ngSubmit)="onSubmit()" class="example-form" [formGroup]="formGroup">
 <mat-card class="formulaire">
-
   <mat-card class="etatCivil">
       <mat-card-header class="titre">Etat civil</mat-card-header>
     <mat-form-field class="example-full-width">
-        <input matInput placeholder="Nom"  type="text"  [(ngModel)]="adherent.nom" [ngModelOptions]="{standalone: true}" required>
+        <input matInput formControlName="nom" placeholder="Nom"  type="text"  [(ngModel)]="adherent.nom" >
+        <mat-error *ngIf="formGroup.controls.nom.invalid">Le nom n'est pas conforme</mat-error>
+        <!--<span [hidden]="formGroup.controls.nom.valid">valid</span>-->
     </mat-form-field>
     <mat-form-field class="example-full-width">
-        <input matInput placeholder="Prénom" type="text"  [(ngModel)]="adherent.prenom" [ngModelOptions]="{standalone: true}" required>
+        <input matInput formControlName="prenom" placeholder="Prénom" type="text"  [(ngModel)]="adherent.prenom">
+        <mat-error *ngIf="formGroup.controls.prenom.invalid">Le nom n'est pas conforme</mat-error>
     </mat-form-field>
     <mat-form-field class="example-full-width">
-        <input matInput placeholder="Date de naissance" [(ngModel)]="adherent.dateDeNaissance" [ngModelOptions]="{standalone: true}" required>
+        <input matInput formControlName="dateNaissance" placeholder="Date de naissance" [(ngModel)]="adherent.dateDeNaissance">
+        <mat-error *ngIf="formGroup.controls.dateNaissance.invalid">Le nom n'est pas conforme</mat-error>
     </mat-form-field>
   </mat-card>
 
   <mat-card class="contact">
     <mat-card-header class="titre">Infos de contact</mat-card-header>
       <mat-form-field class="example-full-width">
-          <input matInput placeholder="adresse" [(ngModel)]="adherent.adresse" [ngModelOptions]="{standalone: true}" required>
+          <input matInput formControlName="adresse" placeholder="adresse" [(ngModel)]="adherent.adresse">
+          <mat-error *ngIf="formGroup.controls.adresse.invalid">Le prénom n'est pas conforme</mat-error>
       </mat-form-field>
       <mat-form-field class="example-full-width">
-          <input matInput placeholder="code postal" [(ngModel)]="adherent.codePostal" [ngModelOptions]="{standalone: true}" required>
+          <input matInput formControlName="codePostal" placeholder="code postal" [(ngModel)]="adherent.codePostal">
+          <mat-error *ngIf="formGroup.controls.codePostal.invalid">Le code postal n'est pas conforme</mat-error>
       </mat-form-field>
       <mat-form-field class="example-full-width">
-          <input matInput placeholder="commune" [(ngModel)]="adherent.commune" [ngModelOptions]="{standalone: true}" required>
+          <input matInput formControlName="commune" placeholder="commune" [(ngModel)]="adherent.commune">
+          <mat-error *ngIf="formGroup.controls.commune.invalid">La commune n'existe pas</mat-error>
       </mat-form-field>
       <mat-form-field class="example-full-width">
-          <input matInput placeholder="téléphone domicile" [(ngModel)]="adherent.telDomicile" [ngModelOptions]="{standalone: true}" required>
+          <input matInput formControlName="telDom" placeholder="téléphone domicile" [(ngModel)]="adherent.telDomicile">
+          <mat-error *ngIf="formGroup.controls.telDom.invalid">Le telephone n'est pas valide</mat-error>
       </mat-form-field>
       <mat-form-field class="example-full-width">
-          <input matInput placeholder="téléphone portable" [(ngModel)]="adherent.telPortable" [ngModelOptions]="{standalone: true}" required>
+          <input matInput formControlName="telPor" placeholder="téléphone portable" [(ngModel)]="adherent.telPortable">
+          <mat-error *ngIf="formGroup.controls.telPor.invalid">Le téléphone n'est pas valide</mat-error>
       </mat-form-field>
       <mat-form-field class="example-full-width">
-          <input matInput placeholder="adresse mail" [(ngModel)]="adherent.mail" [ngModelOptions]="{standalone: true}" required>
+          <input matInput formControlName="mail" placeholder="adresse mail" [(ngModel)]="adherent.mail">
+          <mat-error *ngIf="formGroup.controls.mail.invalid">L'adresse mail n'est pas conforme</mat-error>
       </mat-form-field>
     </mat-card>
 
@@ -50,8 +59,7 @@
             <input matInput placeholder="rôle" value="">
         </mat-form-field>
       </mat-card>
-
 </mat-card>
-<button (click)="tabGroup.selectedIndex = 0" class="myButton" type="submit">Valider</button>
+<button [ngStyle]="{'visibility': formGroup.valid ? 'visible' : 'hidden'}" class="myButton" type="submit">Valider</button>
 </form>
 </div>
