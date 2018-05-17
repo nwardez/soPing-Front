@@ -5,16 +5,61 @@
       <mat-icon>home</mat-icon>
       <mat-menu #menu="matMenu">
         <button mat-menu-item routerLink="">Accueil</button>
-        <button mat-menu-item routerLink="/president">Espace président</button>
-        <button mat-menu-item routerLink="/tresorier">Espace trésorier</button>
-        <button mat-menu-item routerLink="/adherent">Espace adhérent</button>
+        <button mat-menu-item [matMenuTriggerFor]="president">Espace président</button>
+        <button mat-menu-item [matMenuTriggerFor]="tresorier">Espace trésorier</button>
+        <button mat-menu-item [matMenuTriggerFor]="adherent">Espace adhérent</button>
       </mat-menu>
     </button>
     <span>ESPACE ASSOCIATIF</span>
-    <button mat-icon-button routerLink="/president">
+    <button mat-icon-button>
       <mat-icon>perm_identity</mat-icon>
     </button>
   </mat-toolbar>
+  
+  <mat-menu #president="matMenu">
+    <button mat-menu-item [matMenuTriggerFor]="gestionAdherent">Gestion adhérents</button>
+    <button mat-menu-item [matMenuTriggerFor]="gestionSaison">Gestion saisons</button>
+    <button mat-menu-item [matMenuTriggerFor]="gestionEvennement">Gestion évennements</button>
+    <button mat-menu-item>Gestion sportive</button>
+  </mat-menu>
+  
+  <mat-menu #tresorier="matMenu">
+    <button mat-menu-item [matMenuTriggerFor]="gestionAdhesion">Gestion Adhesion</button>
+    <button mat-menu-item [matMenuTriggerFor]="gestionCotisation">Gestion cotisation</button>
+    <button mat-menu-item [matMenuTriggerFor]="gestionPaiement">Gestion paiement</button>
+  </mat-menu>
+  
+  <mat-menu #adherent="matMenu">
+    <button mat-menu-item routerLink="/404">Consulter ma fiche</button>
+    <button mat-menu-item routerLink="/404">Modifier ma fiche</button>
+    <button mat-menu-item routerLink="/404">Mes évennements</button>
+    <button mat-menu-item routerLink="/404">Mes cotisations</button>
+    <button mat-menu-item routerLink="/404">Mes résultats</button>
+  </mat-menu>
+  
+  <mat-menu #gestionAdherent="matMenu">
+    <button mat-menu-item routerLink="/president/listeAdherent">Liste des adhérents</button>
+    <button mat-menu-item routerLink="/president/creationAdherent">Créer un adhérent</button>
+  </mat-menu>
+  
+  <mat-menu #gestionSaison="matMenu">
+    <button mat-menu-item routerLink="/404">Historique des saisons</button>
+    <button mat-menu-item routerLink="/404">Nouvelle saison</button>
+  </mat-menu>
+
+  <mat-menu #gestionEvennement="matMenu">
+    <button mat-menu-item routerLink="/404">Creer un evénnement</button>
+    <button mat-menu-item routerLink="/404">Liste des évennements</button>
+  </mat-menu>
+
+  <mat-menu #gestionAdhesion="matMenu">
+  </mat-menu>
+
+  <mat-menu #gestionCotisation="matMenu">
+  </mat-menu>
+
+  <mat-menu #gestionPaiement="matMenu">
+  </mat-menu>
 
   
 

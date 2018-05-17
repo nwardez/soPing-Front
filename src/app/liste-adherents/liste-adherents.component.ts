@@ -6,6 +6,8 @@ import { ApiService } from '../api.service';
 import { MesPipes } from '../mesPipes';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { PopupComponent } from '../popup/popup.component';
 
 @Component({
   selector: 'app-liste-adherents',
@@ -21,7 +23,7 @@ export class ListeAdherentsComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
 
   constructor(private adherentService: AdherentService,private route: ActivatedRoute,
-    private router: Router) { }
+    private router: Router, public dialog: MatDialog,public popup: PopupComponent) { }
 
 
 
@@ -39,10 +41,24 @@ export class ListeAdherentsComponent implements OnInit {
     this.adherentService.supprimerAdherent(id).subscribe(
       ()=>{
         this.ngOnInit();
-        this.router.navigate([''], {relativeTo: this.route});
+        this.router.navigate(['/president/listeAdherent'], {relativeTo: this.route});
       });
   }
 
+  /* openDialog(id:number): void {
+    this.adherentService.supprimerAdherent(id).subscribe(
+      ()=>{
+        this.ngOnInit();
+        this.router.navigate(['/president'], {relativeTo: this.route});
+      });
+    
+      let dialogRef = this.dialog.open(PopupComponent, {
+        width: '250px',
+        data: { name: "essaoi"}
+      }
+      
+    }
+ */
   update() {
 
   }

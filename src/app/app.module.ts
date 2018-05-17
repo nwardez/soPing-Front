@@ -17,7 +17,6 @@ import { DetailAdherentComponent } from './detail-adherent/detail-adherent.compo
 import { MesPipes } from './mesPipes';
 import { HeaderComponent } from './header/header.component';
 import { ConnexionComponent } from './connexion/connexion.component';
-import { PresidentComponent } from './president/president.component';
 import { RoutingModule } from './routing.module';
 import { MatNativeDateModule } from '@angular/material';
 import { TresorierComponent } from './tresorier/tresorier.component';
@@ -26,6 +25,11 @@ import { PresidentEvenementComponent } from './president-evenement/president-eve
 import { FormsModule } from '@angular/forms';
 import { ListeAdhesionsComponent } from './liste-adhesions/liste-adhesions.component';
 import { SaisonsComponent } from './saisons/saisons.component';
+import { FicheAdherentComponent } from './fiche-adherent/fiche-adherent.component';
+import { AdherentEvenementComponent } from './adherent-evenement/adherent-evenement.component';
+import { PopupComponent } from './popup/popup.component';
+import { ListeSaisonComponent } from './liste-saison/liste-saison.component';
+import { UnderConstructionComponent } from './under-construction/under-construction.component';
 
 
 @NgModule({
@@ -39,12 +43,16 @@ import { SaisonsComponent } from './saisons/saisons.component';
     MesPipes,
     HeaderComponent,
     ConnexionComponent,
-    PresidentComponent,
     TresorierComponent,
     AdherentComponent,
     PresidentEvenementComponent,
     ListeAdhesionsComponent,
-    SaisonsComponent
+    SaisonsComponent,
+    FicheAdherentComponent,
+    AdherentEvenementComponent,
+    PopupComponent,
+    ListeSaisonComponent,
+    UnderConstructionComponent
   ],
   imports: [
     BrowserModule,
@@ -60,8 +68,10 @@ import { SaisonsComponent } from './saisons/saisons.component';
   providers: [
     HttpClient,
     AdherentService,
-    ApiService
+    ApiService,
+    PopupComponent
   ],
+  entryComponents: [PopupComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

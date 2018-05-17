@@ -5,6 +5,7 @@ import { NgForm, FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 
+
 @Component({
   selector: 'app-creation-adherent',
   templateUrl: './creation-adherent.component.html',
@@ -21,7 +22,8 @@ export class CreationAdherentComponent implements OnInit {
 
   onSubmit(form:NgForm) {
     console.log("on submit ok")
-    this.adherentService.creerAdherent(this.adherent).subscribe(() => this.router.navigate(['/president']));
+    this.adherentService.creerAdherent(this.adherent).subscribe(() => this.router.navigate(['/president/listeAdherent']));
+   
   }
 
 }

@@ -1,0 +1,55 @@
+<form #f (ngSubmit)="onSubmit(f)" class="example-form">
+  <mat-card class="formulaire">
+  
+    <mat-card class="etatCivil">
+        <mat-card-header class="titre">Etat civil</mat-card-header>
+      <mat-form-field class="example-full-width">
+          <input matInput placeholder="Nom"  type="text"  [(ngModel)]="adherent.nom" [ngModelOptions]="{standalone: true}" required>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+          <input matInput placeholder="Prénom" type="text"  [(ngModel)]="adherent.prenom" [ngModelOptions]="{standalone: true}" required>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+          <input matInput placeholder="Date de naissance" [(ngModel)]="adherent.dateDeNaissance" [ngModelOptions]="{standalone: true}" required>
+      </mat-form-field>
+    </mat-card>
+  
+    <mat-card class="contact">
+      <mat-card-header class="titre">Infos de contact</mat-card-header>
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="adresse" [(ngModel)]="adherent.adresse" [ngModelOptions]="{standalone: true}" required>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="code postal" [(ngModel)]="adherent.codePostal" [ngModelOptions]="{standalone: true}" required>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="commune" [(ngModel)]="adherent.commune" [ngModelOptions]="{standalone: true}" required>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="téléphone domicile" [(ngModel)]="adherent.telDomicile" [ngModelOptions]="{standalone: true}" required>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="téléphone portable" [(ngModel)]="adherent.telPortable" [ngModelOptions]="{standalone: true}" required>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="adresse mail" [(ngModel)]="adherent.mail" [ngModelOptions]="{standalone: true}" required>
+        </mat-form-field>
+      </mat-card>
+  
+      <mat-card class="club">
+          <mat-card-header class="titre">Infos personnelles</mat-card-header>
+          <mat-form-field class="example-full-width">
+              <input matInput placeholder="pseudo" value="">
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+              <input matInput placeholder="mot de passe" value="">
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+              <input matInput placeholder="rôle" value="">
+          </mat-form-field>
+        </mat-card>
+  
+  
+  </mat-card>
+  <button class="myButton" type="submit">Valider les modifications</button>
+  </form>

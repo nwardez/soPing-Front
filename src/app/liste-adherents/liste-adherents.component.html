@@ -39,6 +39,7 @@
       <ng-container matColumnDef ="supprimer">
         <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
         <mat-cell *matCellDef="let element"><button class="suppr" (click)="delete(element.id)">Supprimer</button></mat-cell>
+        <!--<mat-cell *matCellDef="let element"><button class="suppr" (click)="openDialog()">Supprimer</button></mat-cell> -->
       </ng-container>
       <mat-header-row *matHeaderRowDef="colonnesAdherents"></mat-header-row>
       <mat-row *matRowDef="let row; columns:colonnesAdherents" ></mat-row>

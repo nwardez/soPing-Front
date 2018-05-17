@@ -1,0 +1,4 @@
+<mat-card class="event" *ngFor="let events of evenements"> 
+  <div>{{ events.date }} - {{events.Lieu}}</div>
+  <div><label [ngStyle]="{'background-color': events.couleur, 'color':'white'}">{{events.type}}</label></div>
+</mat-card>
