@@ -2,7 +2,7 @@ export class Adherent {
     public id?: number;
     nom: string;
     prenom: string;
-    //noLicence: string;
+    noLicence: string;
     dateDeNaissance: string;
     //categorie: string;
     adresse: string;

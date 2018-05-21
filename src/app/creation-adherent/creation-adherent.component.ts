@@ -24,8 +24,10 @@ export class CreationAdherentComponent implements OnInit {
     this.formGroup=this.fb.group({
       nom:['', Validators.required],
       prenom:['', Validators.required],
-      dateNaissance:['',Validators.required],
+      //dateNaissance:['',Validators.compose([Validators.required,Validators.pattern("^([0-9]{2})/([0-9]{2})/([0-9]{4})$")])],
+      dateNaissance:['',Validators.compose([Validators.required,Validators.pattern("^([0-3]{1})+([0-9]{1})/([0-1]{1})+([0-9]{1})/([0-9]{4})$")])],
       adresse:['',Validators.required],
+      noLicence:['',Validators.required],
       codePostal:['',Validators.compose([Validators.required,Validators.pattern("^[0-9]{5,5}$")])],
       commune:['',Validators.required],
       telDom:['',Validators.compose([Validators.required,Validators.pattern("^[0-9]{10,10}$")])],

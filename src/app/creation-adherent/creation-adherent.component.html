@@ -48,15 +48,9 @@
     </mat-card>
 
     <mat-card class="club">
-        <mat-card-header class="titre">Infos personnelles</mat-card-header>
+        <mat-card-header class="titre">Infos facultatives</mat-card-header>
         <mat-form-field class="example-full-width">
-            <input matInput placeholder="pseudo" value="">
-        </mat-form-field>
-        <mat-form-field class="example-full-width">
-            <input matInput placeholder="mot de passe" value="">
-        </mat-form-field>
-        <mat-form-field class="example-full-width">
-            <input matInput placeholder="rôle" value="">
+            <input matInput formControlName="noLicence" placeholder="numéro de licence" [(ngModel)]="adherent.noLicence">
         </mat-form-field>
       </mat-card>
 </mat-card>
