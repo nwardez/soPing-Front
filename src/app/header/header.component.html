@@ -19,7 +19,7 @@
     <button mat-menu-item [matMenuTriggerFor]="gestionAdherent">Gestion adhérents</button>
     <button mat-menu-item [matMenuTriggerFor]="gestionSaison">Gestion saisons</button>
     <button mat-menu-item [matMenuTriggerFor]="gestionEvennement">Gestion évennements</button>
-    <button mat-menu-item>Gestion sportive</button>
+    <button mat-menu-item [matMenuTriggerFor]="gestionSportive">Gestion sportive</button>
   </mat-menu>
   
   <mat-menu #tresorier="matMenu">
@@ -42,14 +42,19 @@
   </mat-menu>
   
   <mat-menu #gestionSaison="matMenu">
-    <button mat-menu-item routerLink="/404">Historique des saisons</button>
-    <button mat-menu-item routerLink="/404">Nouvelle saison</button>
+    <button mat-menu-item routerLink="/saison/listeSaisons">Historique des saisons</button>
+    <button mat-menu-item routerLink="/saison/creationSaison">Nouvelle saison</button>
   </mat-menu>
 
   <mat-menu #gestionEvennement="matMenu">
     <button mat-menu-item routerLink="/404">Creer un evénnement</button>
     <button mat-menu-item routerLink="/404">Liste des évennements</button>
   </mat-menu>
+
+  <mat-menu #gestionSportive="matMenu">
+      <button mat-menu-item routerLink="/president/listeCategories">Liste des catégories</button>
+      <button mat-menu-item routerLink="/president/creationCategorie">Creation catégorie</button>
+    </mat-menu>
 
   <mat-menu #gestionAdhesion="matMenu">
   </mat-menu>

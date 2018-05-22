@@ -27,7 +27,7 @@ export class CreationAdherentComponent implements OnInit {
       //dateNaissance:['',Validators.compose([Validators.required,Validators.pattern("^([0-9]{2})/([0-9]{2})/([0-9]{4})$")])],
       dateNaissance:['',Validators.compose([Validators.required,Validators.pattern("^([0-3]{1})+([0-9]{1})/([0-1]{1})+([0-9]{1})/([0-9]{4})$")])],
       adresse:['',Validators.required],
-      noLicence:['',Validators.required],
+      noLicence:[''],
       codePostal:['',Validators.compose([Validators.required,Validators.pattern("^[0-9]{5,5}$")])],
       commune:['',Validators.required],
       telDom:['',Validators.compose([Validators.required,Validators.pattern("^[0-9]{10,10}$")])],

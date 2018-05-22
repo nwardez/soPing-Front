@@ -1,0 +1,20 @@
+<div class="contenu">
+    <form  (ngSubmit)="onSubmit()" class="example-form" [formGroup]="formGroup">
+        <mat-card class="formulaire">
+          <mat-card class="etatCivil">
+              <mat-card-header class="titre">Nouvelle Categorie</mat-card-header>
+            <mat-form-field class="example-full-width">
+                <input matInput formControlName="libelle" placeholder="libelle"  type="text"  [(ngModel)]="categorie.libelle" >
+                <mat-error *ngIf="formGroup.controls.libelle.invalid">Le libellé est obligatoire</mat-error>
+                <!--<span [hidden]="formGroup.controls.nom.valid">valid</span>-->
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <input matInput formControlName="commentaire" placeholder="Commentaire" type="text"  [(ngModel)]="categorie.commentaire">
+                <mat-error *ngIf="formGroup.controls.commentaire.invalid">Le commentaire est obligatoire</mat-error>
+            </mat-form-field>
+          </mat-card>
+        
+        </mat-card>
+        <button [ngStyle]="{'visibility': formGroup.valid ? 'visible' : 'hidden'}" class="myButton" type="submit">Valider</button>
+        </form>
+      </div>

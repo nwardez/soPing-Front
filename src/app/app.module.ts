@@ -15,6 +15,7 @@ import { ApiService } from './api.service';
 import { CreationAdherentComponent } from './creation-adherent/creation-adherent.component';
 import { DetailAdherentComponent } from './detail-adherent/detail-adherent.component';
 import { MesPipes } from './mesPipes';
+import { CurrencyPipe } from './currencyPipe';
 import { HeaderComponent } from './header/header.component';
 import { ConnexionComponent } from './connexion/connexion.component';
 import { RoutingModule } from './routing.module';
@@ -30,6 +31,13 @@ import { AdherentEvenementComponent } from './adherent-evenement/adherent-evenem
 import { PopupComponent } from './popup/popup.component';
 import { ListeSaisonComponent } from './liste-saison/liste-saison.component';
 import { UnderConstructionComponent } from './under-construction/under-construction.component';
+import { CreationSaisonComponent } from './creation-saison/creation-saison.component';
+import { SaisonService } from './saison.service';
+import { ListeCategoriesComponent } from './liste-categories/liste-categories.component';
+import { CategorieService } from './categorie.service';
+import { CreationCategorieComponent } from './creation-categorie/creation-categorie.component';
+
+
 
 
 
@@ -42,6 +50,7 @@ import { UnderConstructionComponent } from './under-construction/under-construct
     CreationAdherentComponent,
     DetailAdherentComponent,
     MesPipes,
+    CurrencyPipe,
     HeaderComponent,
     ConnexionComponent,
     TresorierComponent,
@@ -53,7 +62,10 @@ import { UnderConstructionComponent } from './under-construction/under-construct
     AdherentEvenementComponent,
     PopupComponent,
     ListeSaisonComponent,
-    UnderConstructionComponent
+    UnderConstructionComponent,
+    CreationSaisonComponent,
+    ListeCategoriesComponent,
+    CreationCategorieComponent
   ],
   imports: [
     BrowserModule,
@@ -71,7 +83,9 @@ import { UnderConstructionComponent } from './under-construction/under-construct
     HttpClient,
     AdherentService,
     ApiService,
-    PopupComponent
+    PopupComponent,
+    SaisonService,
+    CategorieService
   ],
   entryComponents: [PopupComponent],
   bootstrap: [AppComponent]

@@ -13,3 +13,14 @@ mat-cell {
     cursor:pointer;
 
 }
+
+.suppr {
+    padding:6px, 0, 6px, 0;
+	background:#d34836;
+	color:#fff;
+	border-radius:2px;
+    border:none;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor:pointer;
+}

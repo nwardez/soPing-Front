@@ -1,0 +1,44 @@
+<div class="contenu">
+    <form  (ngSubmit)="onSubmit()" class="example-form" [formGroup]="formGroup">
+        <mat-card class="formulaire">
+          <mat-card class="etatCivil">
+              <mat-card-header class="titre">Nouvelle saison</mat-card-header>
+            <mat-form-field class="example-full-width">
+                <input matInput formControlName="libelle" placeholder="libelle"  type="text"  [(ngModel)]="saison.libelle" >
+                <mat-error *ngIf="formGroup.controls.libelle.invalid">Le libellé est obligatoire</mat-error>
+                <!--<span [hidden]="formGroup.controls.nom.valid">valid</span>-->
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <input matInput formControlName="cotisationClub" placeholder="Montant cotisation club" type="text"  [(ngModel)]="saison.cotisationClub">
+                <mat-error *ngIf="formGroup.controls.cotisationClub.invalid">Le montant de la cotisation n'est pas conforme</mat-error>
+            </mat-form-field>
+          </mat-card>
+        
+          <mat-card class="contact">
+            <mat-card-header class="titre">Montant des licences par catégorie</mat-card-header>
+              <mat-form-field class="example-full-width">
+                  <input matInput formControlName="poussin" placeholder="Licence poussin" [(ngModel)]="saison.montantLicencePoussin">
+                  <mat-error *ngIf="formGroup.controls.poussin.invalid">Le montant n'est pas conforme</mat-error>
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                  <input matInput formControlName="benjamin" placeholder="Licence benjamin" [(ngModel)]="saison.montantLicenceBenjamin">
+                  <mat-error *ngIf="formGroup.controls.benjamin.invalid">Le montant n'est pas conforme</mat-error>
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                  <input matInput formControlName="cadet" placeholder="Licence cadet" [(ngModel)]="saison.montantLicenceCadet">
+                  <mat-error *ngIf="formGroup.controls.cadet.invalid">Le montant n'est pas conforme</mat-error>
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                  <input matInput formControlName="junior" placeholder="Licence junior" [(ngModel)]="saison.montantLicenceJunior">
+                  <mat-error *ngIf="formGroup.controls.junior.invalid">Le montant n'est pas conforme</mat-error>
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                  <input matInput formControlName="senior" placeholder="Licence senior" [(ngModel)]="saison.montantLicenceSenior">
+                  <mat-error *ngIf="formGroup.controls.senior.invalid">Le montant n'est pas conforme</mat-error>
+              </mat-form-field>
+            </mat-card>
+        
+        </mat-card>
+        <button [ngStyle]="{'visibility': formGroup.valid ? 'visible' : 'hidden'}" class="myButton" type="submit">Valider</button>
+        </form>
+      </div>

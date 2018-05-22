@@ -14,11 +14,21 @@ export class Adherent {
     //dateAdhesion: string;
 }
 
-export interface Cotisation {
-
+export class Saison {
+    public id?: number;
+    libelle:string;
+    cotisationClub:number;
+    montantLicencePoussin: number;
+    montantLicenceBenjamin: number;
+    montantLicenceCadet: number;
+    montantLicenceJunior: number;
+    montantLicenceSenior: number;
 }
 
-export interface Licence {
+export class Categorie {
+    public id?: number;
+    libelle:string;
+    commentaire:string;
 
 }
 

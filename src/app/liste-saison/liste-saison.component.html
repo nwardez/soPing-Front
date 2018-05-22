@@ -1,3 +1,48 @@
-<p>
-  liste-saison works!
-</p>
+<mat-card class="contenu">
+    
+  
+    <!--Filtre pour recherche adherents -->
+    <mat-form-field>
+      <input matInput (keyup)="filtrerTableau($event.target.value)" placeholder="Recherche d'une saison">
+    </mat-form-field>
+    <!-- Affichage tableau des adhérents -->
+    <mat-table [dataSource]="dataSaisons" matSort>
+        
+      <ng-container matColumnDef ="libelle">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Libellé</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.libelle}}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef ="cotisation">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Montant cotisation</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.cotisationClub | number:'2.2-2' }} €</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef ="poussin">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Poussin</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.montantLicencePoussin | number:'2.2-2' }} €</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef ="benjamin">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Benjamin</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.montantLicenceBenjamin | number:'2.2-2' }} €</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef ="cadet">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Cadet</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.montantLicenceCadet | number:'2.2-2' }} €</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef ="junior">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Junior</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element.montantLicenceJunior | number:'2.2-2' }} €</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef ="senior">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Senior</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.montantLicenceSenior | number:'2.2-2' }} €</mat-cell>
+          </ng-container>
+        <ng-container matColumnDef ="editer">
+          <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
+          <mat-cell *matCellDef="let element"><button class="edit" (click)="update()">Editer</button></mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="colonnesAdherents"></mat-header-row>
+        <mat-row *matRowDef="let row; columns:colonnesAdherents" ></mat-row>
+    </mat-table>
+    <mat-paginator #paginator [pageSize]=10 [pageSizeOptions]="[5,10,20]" [showFirstLastButtons]="true" >
+    </mat-paginator>
+  </mat-card>
