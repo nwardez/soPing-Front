@@ -1,0 +1,34 @@
+<mat-card class="contenu">
+  
+
+  <!--Filtre pour recherche adherents -->
+  <mat-form-field>
+    <input matInput (keyup)="filtrerTableau($event.target.value)" placeholder="Recherche d'un type de licence">
+  </mat-form-field>
+  <!-- Affichage tableau des adhérents -->
+  <mat-table [dataSource]="dataTypeLicences" matSort>
+      
+    <ng-container matColumnDef ="libelle">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Libellé</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.libelle}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef ="commentaire">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Commentaire</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.commentaire }}</mat-cell>
+      </ng-container>
+      
+      <ng-container matColumnDef ="editer">
+        <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
+        <mat-cell *matCellDef="let element"><button class="edit" (click)="update()">Editer</button></mat-cell>
+      </ng-container>
+      <ng-container matColumnDef ="supprimer">
+          <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
+          <mat-cell *matCellDef="let element"><button class="suppr" (click)="delete(element.id)">Supprimer</button></mat-cell>
+        </ng-container>
+      <mat-header-row *matHeaderRowDef="colonnesTypeLicences"></mat-header-row>
+      <mat-row *matRowDef="let row; columns:colonnesTypeLicences" ></mat-row>
+  </mat-table>
+  <mat-paginator #paginator [pageSize]=10 [pageSizeOptions]="[5,10,20]" [showFirstLastButtons]="true" >
+  </mat-paginator>
+</mat-card>
+

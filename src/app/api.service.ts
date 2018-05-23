@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Adherent, Saison, Categorie } from './modeles';
+import { Adherent, Saison, Categorie, TypeLicence } from './modeles';
 import { Observable } from 'rxjs/Observable';
+import { TypeLicenceService } from './type-licence.service';
 
 @Injectable()
 export class ApiService {
@@ -93,6 +94,33 @@ export class ApiService {
 
   editerCategorie(categorie: Categorie, id: number): Observable<Categorie> {
     return this.http.put<Categorie>(this.url + 'categorie/'+ categorie.id, categorie);
+  }
+
+  // -----------------API TYPE LICENCE-----------------------------------------------------
+  // Création d'un nouveau type de licence
+  creerTypeLicence(typeLicence: TypeLicence):Observable<TypeLicence> {
+    console.log("Api ok");
+    return this.http.post<TypeLicence>(this.url+'typeLicence',typeLicence);
+  }
+
+  //Retourne la liste des types de licences
+  listerTypeLicence():Observable<TypeLicence[]> {
+    console.log(this.url);
+    return this.http.get<TypeLicence[]>(this.url+'typeLicences') as Observable<TypeLicence[]>;
+  }
+
+  //Afficher le détail d'un type de licence selon son Id
+  afficherTypeLicence(idTypeLicence: number):Observable<TypeLicence> {
+    return this.http.get<TypeLicence>(this.url+'typeLicence/' + idTypeLicence);
+  }
+
+  //Supprime un type de licence en fonction de son Id
+  supprimerTypeLicence(idTypeLicence: number): Observable<TypeLicence> {
+    return this.http.delete<Categorie>(this.url+'/typeLicence/delete/'+ idTypeLicence);
+  }
+
+  editerTypeLicence(typeLicence: TypeLicence, id: number): Observable<TypeLicence> {
+    return this.http.put<TypeLicence>(this.url + 'typeLicence/'+ typeLicence.id, typeLicence);
   }
 
 }

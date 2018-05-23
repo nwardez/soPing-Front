@@ -32,6 +32,13 @@ export class Categorie {
 
 }
 
-export interface Paiement {
-    
+export class Paiement {
+    public id?: number;
+
+}
+
+export class TypeLicence {
+    public id?: number;
+    libelle: string;
+    commentaire: string;
 }

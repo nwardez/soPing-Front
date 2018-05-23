@@ -36,6 +36,10 @@ import { SaisonService } from './saison.service';
 import { ListeCategoriesComponent } from './liste-categories/liste-categories.component';
 import { CategorieService } from './categorie.service';
 import { CreationCategorieComponent } from './creation-categorie/creation-categorie.component';
+import { ListeLicencesComponent } from './liste-licences/liste-licences.component';
+import { TypeLicenceService } from './type-licence.service';
+import { CreationTypeLicenceComponent } from './creation-type-licence/creation-type-licence.component';
+
 
 
 
@@ -65,7 +69,9 @@ import { CreationCategorieComponent } from './creation-categorie/creation-catego
     UnderConstructionComponent,
     CreationSaisonComponent,
     ListeCategoriesComponent,
-    CreationCategorieComponent
+    CreationCategorieComponent,
+    ListeLicencesComponent,
+    CreationTypeLicenceComponent
   ],
   imports: [
     BrowserModule,
@@ -85,7 +91,8 @@ import { CreationCategorieComponent } from './creation-categorie/creation-catego
     ApiService,
     PopupComponent,
     SaisonService,
-    CategorieService
+    CategorieService,
+    TypeLicenceService
   ],
   entryComponents: [PopupComponent],
   bootstrap: [AppComponent]

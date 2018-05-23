@@ -11,6 +11,8 @@ import { CreationSaisonComponent } from './creation-saison/creation-saison.compo
 import { ListeSaisonComponent } from './liste-saison/liste-saison.component';
 import { ListeCategoriesComponent } from './liste-categories/liste-categories.component';
 import { CreationCategorieComponent } from './creation-categorie/creation-categorie.component';
+import { ListeLicencesComponent } from './liste-licences/liste-licences.component';
+import { CreationTypeLicenceComponent } from './creation-type-licence/creation-type-licence.component';
 
 // Définition des chemins d'accès pour <router-outlet>
 const ROUTES: Routes = [
@@ -21,7 +23,9 @@ const ROUTES: Routes = [
         {path: 'listeAdherent', component: ListeAdherentsComponent}, 
         {path: 'creationAdherent', component: CreationAdherentComponent}, 
         {path: 'listeCategories', component: ListeCategoriesComponent},
-        {path: 'creationCategorie', component: CreationCategorieComponent}
+        {path: 'creationCategorie', component: CreationCategorieComponent},
+        {path: 'listeLicences', component: ListeLicencesComponent},
+        {path: 'creationTypeLicence', component: CreationTypeLicenceComponent}
       ]
     },
     {path:'tresorier',component: TresorierComponent},
