@@ -39,6 +39,7 @@ import { CreationCategorieComponent } from './creation-categorie/creation-catego
 import { ListeLicencesComponent } from './liste-licences/liste-licences.component';
 import { TypeLicenceService } from './type-licence.service';
 import { CreationTypeLicenceComponent } from './creation-type-licence/creation-type-licence.component';
+import { CreationPaiementComponent } from './creation-paiement/creation-paiement.component';
 
 
 
@@ -71,7 +72,8 @@ import { CreationTypeLicenceComponent } from './creation-type-licence/creation-t
     ListeCategoriesComponent,
     CreationCategorieComponent,
     ListeLicencesComponent,
-    CreationTypeLicenceComponent
+    CreationTypeLicenceComponent,
+    CreationPaiementComponent
   ],
   imports: [
     BrowserModule,

@@ -34,11 +34,16 @@ export class Categorie {
 
 export class Paiement {
     public id?: number;
-
+    montantPaiement:number;
+    datePaiement:string;
 }
 
 export class TypeLicence {
     public id?: number;
     libelle: string;
     commentaire: string;
+}
+
+export class Adhesion {
+    public id?: number;
 }

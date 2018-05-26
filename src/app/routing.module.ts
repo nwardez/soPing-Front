@@ -13,6 +13,7 @@ import { ListeCategoriesComponent } from './liste-categories/liste-categories.co
 import { CreationCategorieComponent } from './creation-categorie/creation-categorie.component';
 import { ListeLicencesComponent } from './liste-licences/liste-licences.component';
 import { CreationTypeLicenceComponent } from './creation-type-licence/creation-type-licence.component';
+import { CreationPaiementComponent } from './creation-paiement/creation-paiement.component';
 
 // Définition des chemins d'accès pour <router-outlet>
 const ROUTES: Routes = [
@@ -28,7 +29,11 @@ const ROUTES: Routes = [
         {path: 'creationTypeLicence', component: CreationTypeLicenceComponent}
       ]
     },
-    {path:'tresorier',component: TresorierComponent},
+    {path:'tresorier',
+    children:[
+      {path: 'creationPaiement', component:CreationPaiementComponent}
+    ]
+  },
     {path:'adherent',component: AdherentComponent},
     {path:'saison',
     children: [
