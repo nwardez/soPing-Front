@@ -1,3 +1,23 @@
 <div style="text-align:center" class="tresorier">
- 
+        <div class="contenu">
+            <div class="parent">
+                <div class="gauche">
+                    <mat-card class="etatCivil">
+                        <mat-card-header class="titre">Données personnelles </mat-card-header>
+                        <mat-card-content>{{adherent.nom}}</mat-card-content>
+                        <mat-card-content>{{adherent.prenom}}</mat-card-content>          
+                    </mat-card>
+                </div>
+                <div class="droite">
+                        <mat-card class="etatCivil">
+                            <div id="content" #content>
+                            <mat-card-header class="titre">Mes paiements</mat-card-header> 
+                            <mat-card-content>{{adherent.cotisations}}</mat-card-content>
+                            </div>
+                            <button (click)="generatePDF()">Editer</button>        
+                        </mat-card>
+                    </div>
+            </div>
+
+        </div>
 </div>

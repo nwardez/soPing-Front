@@ -4,14 +4,12 @@ export class Adherent {
     prenom: string;
     noLicence: string;
     dateDeNaissance: string;
-    //categorie: string;
     adresse: string;
     codePostal: string;
     commune: string;
     telDomicile: string;
     telPortable: string;
     mail: string;
-    //dateAdhesion: string;
 }
 
 export class Saison {
