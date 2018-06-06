@@ -22,7 +22,7 @@ export class AdherentComponent implements OnInit {
 
     let content= this.content.nativeElement;
     doc.fromHTML(content.innerHTML,15,15, {
-      'width':190,
+      'width':1000,
       'elementHandlers': specialElementHandlers
     });
 
@@ -36,70 +36,25 @@ export class AdherentComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.adherent.nom="collet";
+    this.adherent.nom="COLLET";
     this.adherent.prenom= "Yann";
-    this.adherent.cotisations=80;
-    // this.adherent = [
-    //   {
-    //     "nom":"Abacab",
-    //     "prenom":"Genesis",
-    //     "dateNaissance":1981,
-    //     "adresse":"Rock",
-    //     "codePostal":33500,
-    //     "Commune": "Libourne",
-    //     "telDom": "0524246148",
-    //     "telPort":"0660249858",
-    //     "mail": "yann.collet@gmail.com",
-    //     "adhesion": [
-    //         {
-    //         "libelle": "2016/2017",
-    //         "montantcotis": 35,
-    //         "montantLicence": 45,
-    //         "montantPaiement": 80,
-    //         "regle": true
-    //         },
-    //         {
-    //         "libelle": "2017/2018",
-    //         "montantcotis1": 40,
-    //         "montantLicence1": 55,
-    //         "montantPaiement": 70,
-    //         "regle": false
-    //           }
-    //         ],
-    //     "evennement": [
-    //         {
-    //         "libelle":"entrainement",
-    //         "date":"26/06/2018",
-    //         "lieu": "Libourne"
-    //         },
-    //         {
-    //         "libelle":"compétition",
-    //         "date":"29/06/2018",
-    //         "lieu": "Cestas"
-    //         }
-    //     ],
-    //     "resultat": [
-    //       {
-    //       "libelle":"victoire",
-    //       "set1":"08",
-    //       "set2": "11",
-    //       "set3": "11",
-    //       "set4":"11",
-    //       "set5": "04",
-    //       "set6": "09",
-    //       },
-    //       {
-    //         "libelle":"defaite",
-    //         "set1":"1O",
-    //         "set2": "11",
-    //         "set3": "02",
-    //         "set4":"12",
-    //         "set5": "08",
-    //         "set6": "11",
-    //       }
-    //   ]
-    // }
-    // ];
+    this.adherent.cotisations="80,00 Euros";
+    this.adherent.adresse= "147 bis rue des vignes";
+    this.adherent.codepostal= "33500";
+    this.adherent.ville="Libourne";
+    this.adherent.TelDom="0524246148";
+    this.adherent.TelPor="0654345644";
+    this.adherent.mail="mon-mail.gmail.com";
+    this.adherent.evenement1="Entrainement";
+    this.adherent.lieuEvenement1="Libourne";
+    this.adherent.dateEvenement1="07/06/2018";
+    this.adherent.evenement2="Compétition";
+    this.adherent.lieuEvenement2="Cestas";
+    this.adherent.dateEvenement2="12/06/2018";
+    this.adherent.evenement3="Entrainement";
+    this.adherent.lieuEvenement3="Libourne";
+    this.adherent.dateEvenement3="18/06/2018";
+    
   }
 
 }

@@ -1,23 +1,67 @@
-<div style="text-align:center" class="tresorier">
+<div class="tresorier">
         <div class="contenu">
             <div class="parent">
                 <div class="gauche">
                     <mat-card class="etatCivil">
                         <mat-card-header class="titre">Données personnelles </mat-card-header>
-                        <mat-card-content>{{adherent.nom}}</mat-card-content>
-                        <mat-card-content>{{adherent.prenom}}</mat-card-content>          
+                        <mat-card-content><h5>Nom:</h5> {{adherent.nom }}</mat-card-content>
+                        <mat-card-content><h5>Prénom:</h5> {{adherent.prenom}}</mat-card-content>
+                        <mat-card-content><h5>Adresse:</h5> {{adherent.adresse}}</mat-card-content>
+                        <mat-card-content><h5>Code postal:</h5> {{adherent.codepostal}}</mat-card-content>
+                        <mat-card-content><h5>Ville:</h5> {{adherent.ville}}</mat-card-content>
+                        <mat-card-content><h5>Tel fixe:</h5> {{adherent.TelDom}}</mat-card-content>
+                        <mat-card-content><h5>Tel portable:</h5> {{adherent.TelPor}}</mat-card-content>
+                        <mat-card-content><h5>Mail:</h5> {{adherent.mail}}</mat-card-content>          
                     </mat-card>
                 </div>
                 <div class="droite">
                         <mat-card class="etatCivil">
-                            <div id="content" #content>
-                            <mat-card-header class="titre">Mes paiements</mat-card-header> 
-                            <mat-card-content>{{adherent.cotisations}}</mat-card-content>
-                            </div>
+                                <mat-card-header class="titre">Prochains évennements</mat-card-header>
+                                <mat-card class="align" >
+                                    <div>Type: {{adherent.evenement1 }} </div>
+                                    <div>Date: {{adherent.dateEvenement1}}</div>
+                                    <div class="align">Lieu: {{adherent.lieuEvenement1}}</div>
+                                </mat-card>
+                                <mat-card class="align">
+                                    <div>Type: {{adherent.evenement2 }} </div>
+                                    <div class="align">Date: {{adherent.dateEvenement2}}</div>
+                                    <div class="align">Lieu: {{adherent.lieuEvenement2}}</div>
+                                </mat-card>
+                                <mat-card class="align">
+                                    <div>Type: {{adherent.evenement3 }}</div>
+                                    <div class="align">Date: {{adherent.dateEvenement3}}</div>
+                                    <div class="align">Lieu: {{adherent.lieuEvenement3}}</div>
+                                </mat-card>
+                        </mat-card>
+                        <mat-card class="etatCivil">
+                                <mat-card-header class="titre">Derniers résultats</mat-card-header>
+                                <mat-card-content><h5>Nom:</h5> {{adherent.nom }}</mat-card-content>
+                                <mat-card-content><h5>Prénom:</h5> {{adherent.prenom}}</mat-card-content>        
+                        </mat-card>
+                        <mat-card class="etatCivil">
+                                <mat-card-header class="titre">Mes cotisations</mat-card-header>
+                                <mat-card-content><h5>Nom:</h5> {{adherent.nom }}</mat-card-content>
+                                <mat-card-content><h5>Prénom:</h5> {{adherent.prenom}}</mat-card-content>
                             <button (click)="generatePDF()">Editer</button>        
                         </mat-card>
-                    </div>
+                </div>
             </div>
 
         </div>
+
+        
+</div>
+<div id="content" #content>
+        <h1 class="titre">FACTURE</h1> 
+        <p>_________________________________________________________________</p>
+        <br>
+        <p>Je soussigné, Christophe RENARD, agissant en tant que président</p>
+        <p>de l'espace associatif (association de loi 1901), certifie avoir </p>
+        <p>perçu au titre des cotisations, la somme de {{adherent.cotisations}}</p>
+        <p>de la part de {{ adherent.prenom }} {{ adherent.nom }}</p>
+        <br>
+        <br>
+        <p>Pour faire valoir ce que de droit.</p>
+        <br>
+        <p>Fait à Libourne, le 04/06/2018</p>
 </div>

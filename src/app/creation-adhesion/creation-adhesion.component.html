@@ -1,0 +1,42 @@
+<div class="contenu">
+    <form  (ngSubmit)="onSubmit()" class="example-form" [formGroup]="formGroup">
+        <mat-card class="formulaire">
+          <mat-card class="etatCivil">
+              <mat-card-header class="titre">Nouvelle adhésion</mat-card-header>
+              <mat-form-field>
+                  <mat-select formControlName="choixAdherent"placeholder="Choisir un adherent">
+                    <mat-option>--</mat-option>
+                    <mat-option *ngFor="let a of adherents" [value]="a">{{a.nom | uppercase}} {{a.prenom | premiereLettreEnCapitale}}</mat-option>
+                    <mat-error *ngIf="formGroup.controls.choixAdherent.invalid">Veuillez choisir un adhérent</mat-error>
+                  </mat-select>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-select formControlName="choixSaison"placeholder="Choisir une saison" [(ngModel)]="saison">
+                      <mat-option>--</mat-option>
+                      <mat-option *ngFor="let s of saisons" [value]="s">{{s.libelle | uppercase}} </mat-option>
+                      <mat-error *ngIf="formGroup.controls.choixSaison.invalid">Veuillez choisir une saison</mat-error>
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field>
+                      <mat-select formControlName="choixCategorie"placeholder="Choisir une categorie" [(ngModel)]="categorie">
+                        <mat-option>--</mat-option>
+                        <mat-option *ngFor="let c of categories" [value]="c">{{c.libelle | premiereLettreEnCapitale}}</mat-option>
+                        <mat-error *ngIf="formGroup.controls.choixCategorie.invalid">Veuillez choisir une catégorie</mat-error>
+                      </mat-select>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-select formControlName="choixLicence"placeholder="Type de Licence" [(ngModel)]="typeLicence">
+                          <mat-option>--</mat-option>
+                          <mat-option *ngFor="let t of typeLicences" [value]="t">{{t.libelle | premiereLettreEnCapitale}}</mat-option>
+                          <mat-error *ngIf="formGroup.controls.choixLicence.invalid">Veuillez choisir une licence</mat-error>
+                        </mat-select>
+                      </mat-form-field>
+           
+          </mat-card>
+        
+        </mat-card>
+        <button [ngStyle]="{'visibility': formGroup.valid ? 'visible' : 'hidden'}" class="myButton" type="submit">Valider</button>
+        </form>
+      </div>
+      
+

@@ -40,6 +40,8 @@ import { ListeLicencesComponent } from './liste-licences/liste-licences.componen
 import { TypeLicenceService } from './type-licence.service';
 import { CreationTypeLicenceComponent } from './creation-type-licence/creation-type-licence.component';
 import { CreationPaiementComponent } from './creation-paiement/creation-paiement.component';
+import { MonComposantComponent } from './mon-composant/mon-composant.component';
+import { CreationAdhesionComponent } from './creation-adhesion/creation-adhesion.component';
 
 
 
@@ -73,7 +75,9 @@ import { CreationPaiementComponent } from './creation-paiement/creation-paiement
     CreationCategorieComponent,
     ListeLicencesComponent,
     CreationTypeLicenceComponent,
-    CreationPaiementComponent
+    CreationPaiementComponent,
+    MonComposantComponent,
+    CreationAdhesionComponent
   ],
   imports: [
     BrowserModule,

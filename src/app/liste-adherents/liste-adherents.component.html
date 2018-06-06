@@ -25,7 +25,7 @@
       </ng-container>
       <ng-container matColumnDef ="commune">
         <mat-header-cell *matHeaderCellDef mat-sort-header>Commune</mat-header-cell>
-        <mat-cell *matCellDef="let element">{{element.commune}}</mat-cell>
+        <mat-cell *matCellDef="let element">{{element.commune | uppercase}}</mat-cell>
       </ng-container>
       <ng-container matColumnDef ="portable">
         <mat-header-cell *matHeaderCellDef mat-sort-header>Portable</mat-header-cell>

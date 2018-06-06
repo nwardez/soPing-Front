@@ -45,20 +45,6 @@ export class ListeAdherentsComponent implements OnInit {
       });
   }
 
-  /* openDialog(id:number): void {
-    this.adherentService.supprimerAdherent(id).subscribe(
-      ()=>{
-        this.ngOnInit();
-        this.router.navigate(['/president'], {relativeTo: this.route});
-      });
-    
-      let dialogRef = this.dialog.open(PopupComponent, {
-        width: '250px',
-        data: { name: "essaoi"}
-      }
-      
-    }
- */
   update() {
 
   }

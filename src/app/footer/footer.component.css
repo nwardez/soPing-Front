@@ -2,11 +2,12 @@
     display:flex;
     flex-direction: row;
     justify-content: space-around;
-    background-color: rgb(157, 157, 218);
+    
    
 }
 .pad {
     padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .footer-element {
@@ -29,6 +30,7 @@
 
 .footer-element-sponsors {
     text-align: center;
+    font-size: 0.8em;
 }
 
 .footer-element-liens {

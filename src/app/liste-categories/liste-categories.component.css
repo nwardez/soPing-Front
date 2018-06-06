@@ -3,7 +3,7 @@ mat-cell {
 }
 
 .edit {
-    padding:6px, 0, 6px, 0;
+    padding:9px;
 	background:#365bd3;
 	color:#fff;
 	border-radius:2px;
@@ -15,7 +15,7 @@ mat-cell {
 }
 
 .suppr {
-    padding:6px, 0, 6px, 0;
+    padding:9px;
 	background:#d34836;
 	color:#fff;
 	border-radius:2px;
@@ -23,4 +23,15 @@ mat-cell {
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
     cursor:pointer;
+}
+
+.edit:hover {
+    background-color:white; /* Green */
+    color: #365bd3;
+}
+
+
+.suppr:hover {
+    background-color:white; /* Green */
+    color: #d34836;
 }

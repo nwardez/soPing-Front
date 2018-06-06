@@ -1,5 +1,5 @@
 .example-card {
-    max-width: 800px;
+    width: 45%;
     margin: 20px;
   }
   
@@ -20,4 +20,8 @@
 
   p {
       text-align: left;
+  }
+
+  .mcc {
+      padding-top: 20px;
   }

@@ -10,6 +10,7 @@ export class Adherent {
     telDomicile: string;
     telPortable: string;
     mail: string;
+    adhessions: Adhesion[];
 }
 
 export class Saison {
