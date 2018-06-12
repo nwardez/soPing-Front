@@ -31,9 +31,13 @@
         <mat-header-cell *matHeaderCellDef mat-sort-header>Portable</mat-header-cell>
         <mat-cell *matCellDef="let element">{{element.telPortable}}</mat-cell>
       </ng-container>
+      <ng-container matColumnDef ="detail">
+        <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
+        <mat-cell *matCellDef="let element"><button class="detail" (click)="showDetail(element.id)" [routerLink]="['/adherent',element.id]">Détail</button></mat-cell>
+      </ng-container>
       <ng-container matColumnDef ="editer">
         <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
-        <mat-cell *matCellDef="let element"><button class="edit" (click)="update()">Editer</button></mat-cell>
+        <mat-cell *matCellDef="let element"><button class="edit" (click)="update()" [routerLink]="['/adherent/edit/',element.id]">Editer</button></mat-cell>
       </ng-container>
       <ng-container matColumnDef ="supprimer">
         <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>

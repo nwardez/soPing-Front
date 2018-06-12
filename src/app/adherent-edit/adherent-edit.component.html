@@ -1,0 +1,60 @@
+
+<div class="contenu">
+  <form  (ngSubmit)="onSubmit()" class="example-form" [formGroup]="formGroup">
+  <mat-card class="formulaire">
+    <mat-card class="etatCivil">
+        <mat-card-header class="titre">Etat civil</mat-card-header>
+      <mat-form-field class="example-full-width">
+          <input matInput formControlName="nom" placeholder="Nom"  type="text"  [(ngModel)]="adherent.nom" >
+          <mat-error *ngIf="formGroup.controls.nom.invalid">Le nom n'est pas conforme</mat-error>
+          <!--<span [hidden]="formGroup.controls.nom.valid">valid</span>-->
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+          <input matInput formControlName="prenom" placeholder="Prénom" type="text"  [(ngModel)]="adherent.prenom">
+          <mat-error *ngIf="formGroup.controls.prenom.invalid">Le nom n'est pas conforme</mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+          <input matInput formControlName="dateNaissance" placeholder="Date de naissance" [(ngModel)]="adherent.dateDeNaissance">
+          <mat-error *ngIf="formGroup.controls.dateNaissance.invalid">La date de naissance n'est pas conforme</mat-error>
+      </mat-form-field>
+    </mat-card>
+  
+    <mat-card class="contact">
+      <mat-card-header class="titre">Infos de contact</mat-card-header>
+        <mat-form-field class="example-full-width">
+            <input matInput formControlName="adresse" placeholder="adresse" [(ngModel)]="adherent.adresse">
+            <mat-error *ngIf="formGroup.controls.adresse.invalid">Le prénom n'est pas conforme</mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <input matInput formControlName="codePostal" placeholder="code postal" [(ngModel)]="adherent.codePostal">
+            <mat-error *ngIf="formGroup.controls.codePostal.invalid">Le code postal n'est pas conforme</mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <input matInput formControlName="commune" placeholder="commune" [(ngModel)]="adherent.commune">
+            <mat-error *ngIf="formGroup.controls.commune.invalid">La commune n'existe pas</mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <input matInput formControlName="telDom" placeholder="téléphone domicile" [(ngModel)]="adherent.telDomicile">
+            <mat-error *ngIf="formGroup.controls.telDom.invalid">Le telephone n'est pas valide</mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <input matInput formControlName="telPor" placeholder="téléphone portable" [(ngModel)]="adherent.telPortable">
+            <mat-error *ngIf="formGroup.controls.telPor.invalid">Le téléphone n'est pas valide</mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <input matInput formControlName="mail" placeholder="adresse mail" type="mail" [(ngModel)]="adherent.mail">
+            <mat-error *ngIf="formGroup.controls.mail.invalid">L'adresse mail n'est pas conforme</mat-error>
+        </mat-form-field>
+      </mat-card>
+  
+      <mat-card class="club">
+          <mat-card-header class="titre">Infos facultatives</mat-card-header>
+          <mat-form-field class="example-full-width">
+              <input matInput formControlName="noLicence" placeholder="numéro de licence" [(ngModel)]="adherent.noLicence">
+          </mat-form-field>
+        </mat-card>
+  </mat-card>
+  <button [ngStyle]="{'visibility': formGroup.valid ? 'visible' : 'hidden'}" class="myButton" type="submit">Valider les modifications</button>
+  </form>
+  </div>
+  

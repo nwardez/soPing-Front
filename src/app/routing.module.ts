@@ -15,6 +15,7 @@ import { ListeLicencesComponent } from './liste-licences/liste-licences.componen
 import { CreationTypeLicenceComponent } from './creation-type-licence/creation-type-licence.component';
 import { CreationPaiementComponent } from './creation-paiement/creation-paiement.component';
 import { CreationAdhesionComponent } from './creation-adhesion/creation-adhesion.component';
+import { AdherentEditComponent } from './adherent-edit/adherent-edit.component';
 
 // Définition des chemins d'accès pour <router-outlet>
 const ROUTES: Routes = [
@@ -28,6 +29,7 @@ const ROUTES: Routes = [
         {path: 'creationCategorie', component: CreationCategorieComponent},
         {path: 'listeLicences', component: ListeLicencesComponent},
         {path: 'creationTypeLicence', component: CreationTypeLicenceComponent}
+        
       ]
     },
     {path:'tresorier',
@@ -37,6 +39,8 @@ const ROUTES: Routes = [
     ]
   },
     {path:'adherent',component: AdherentComponent},
+    {path: 'adherent/:id', component: AdherentComponent},
+    {path:'adherent/edit/:id', component: AdherentEditComponent},
     {path:'saison',
     children: [
       {path:'creationSaison', component: CreationSaisonComponent},

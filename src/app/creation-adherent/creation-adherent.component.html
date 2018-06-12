@@ -42,7 +42,7 @@
           <mat-error *ngIf="formGroup.controls.telPor.invalid">Le téléphone n'est pas valide</mat-error>
       </mat-form-field>
       <mat-form-field class="example-full-width">
-          <input matInput formControlName="mail" placeholder="adresse mail" [(ngModel)]="adherent.mail">
+          <input matInput formControlName="mail" placeholder="adresse mail" type="mail" [(ngModel)]="adherent.mail">
           <mat-error *ngIf="formGroup.controls.mail.invalid">L'adresse mail n'est pas conforme</mat-error>
       </mat-form-field>
     </mat-card>

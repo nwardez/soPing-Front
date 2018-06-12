@@ -16,8 +16,9 @@ import { PopupComponent } from '../popup/popup.component';
 })
 export class ListeAdherentsComponent implements OnInit {
 
-  colonnesAdherents=['id','nom','prenom','code postal','commune','portable','editer','supprimer'];
+  colonnesAdherents=['id','nom','prenom','code postal','commune','portable','detail','editer','supprimer'];
   dataAdherents;
+ 
 
   @ViewChild(MatPaginator) paginator:MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
@@ -46,13 +47,21 @@ export class ListeAdherentsComponent implements OnInit {
   }
 
   update() {
-
+    
   }
 
     filtrerTableau(valeur: string) {
       valeur= valeur.trim();
       valeur=valeur.toLowerCase();
       this.dataAdherents.filter=valeur;
+  }
+
+  showDetail(id:number) {
+    this.adherentService.afficherAdherent(id).subscribe(
+      ()=>{
+        //this.router.navigate(['/president/adherent/'+'{id}'], {relativeTo: this.route});
+      }
+    );
   }
 
   

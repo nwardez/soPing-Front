@@ -1,67 +1,197 @@
-<div class="tresorier">
-        <div class="contenu">
-            <div class="parent">
-                <div class="gauche">
-                    <mat-card class="etatCivil">
-                        <mat-card-header class="titre">Données personnelles </mat-card-header>
-                        <mat-card-content><h5>Nom:</h5> {{adherent.nom }}</mat-card-content>
-                        <mat-card-content><h5>Prénom:</h5> {{adherent.prenom}}</mat-card-content>
-                        <mat-card-content><h5>Adresse:</h5> {{adherent.adresse}}</mat-card-content>
-                        <mat-card-content><h5>Code postal:</h5> {{adherent.codepostal}}</mat-card-content>
-                        <mat-card-content><h5>Ville:</h5> {{adherent.ville}}</mat-card-content>
-                        <mat-card-content><h5>Tel fixe:</h5> {{adherent.TelDom}}</mat-card-content>
-                        <mat-card-content><h5>Tel portable:</h5> {{adherent.TelPor}}</mat-card-content>
-                        <mat-card-content><h5>Mail:</h5> {{adherent.mail}}</mat-card-content>          
+<div class="contenu">
+<mat-card class="mep">
+        <h2>Fiche adhérent: {{adherent.nom | uppercase}} {{adherent.prenom | premiereLettreEnCapitale}}</h2>
+    </mat-card>
+<div class="row">
+    
+    <mat-card class="col-sm-1 col-lg-6">
+            <mat-card-header>
+            <div mat-card-avatar class="header-image-etatcivil"></div>
+            <mat-card-title>Informations personnelles</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <fieldset class="col-md-6">    	
+                            <legend>Etat-civil</legend>
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        <div class="portrait">
+                                            <div class="portrait-element">
+                                                <p>{{adherent.prenom | premiereLettreEnCapitale}} {{adherent.nom | uppercase}}</p>
+                                                <p>Né(e) le {{adherent.dateDeNaissance}}</p>
+                                            </div>
+                                            <div class="portrait-element2">
+                                                    
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>    
+                        </fieldset>				
+                    <div class="clearfix"></div>
+                    </div>               
+                </div>
+                <div class="panel panel-default">
+                        <div class="panel-body">
+                            <fieldset class="col-md-6">    	
+                                <legend>Coordonnées</legend>
+                                    <div class="panel panel-default">
+                                        <div class="panel-body">
+                                            <p>{{adherent.adresse}} {{adherent.codePostal}} {{adherent.commune}}</p>
+                                            <p>Mail: {{adherent.mail}}</p>
+                                            <p>Tel domicile: {{adherent.telDomicile}}</p>
+                                            <p>Tel portable: {{adherent.telPortable}}</p>
+                                        </div>
+                                    </div>    
+                            </fieldset>				
+                        <div class="clearfix"></div>
+                        </div>               
+                    </div>
+                    <div class="panel panel-default">
+                            <div class="panel-body">
+                                <fieldset class="col-md-6">    	
+                                    <legend>Infos sportives</legend>
+                                        <div class="panel panel-default">
+                                            <div class="panel-body">
+                                                <p>Numero de Licence: 7734554</p>
+                                                <p>Classement: 10</p>
+                                                <p>Points FFTT: 1041</p>
+                                            </div>
+                                        </div>    
+                                </fieldset>				
+                            <div class="clearfix"></div>
+                            </div>
+                            <div id="content" #content>
+                                <h1 class="titre">FACTURE</h1> 
+                                <p>_________________________________________________________________</p>
+                                <br>
+                                <p>Je soussigné, Christophe RENARD, agissant en tant que président</p>
+                                <p>de l'espace associatif (association de loi 1901), certifie avoir </p>
+                                <p>perçu au titre des cotisations, la somme de 85.00Euros</p>
+                                <p>de la part de {{ adherent.prenom }} {{ adherent.nom }}</p>
+                                <br>
+                                <br>
+                                <p>Pour faire valoir ce que de droit.</p>
+                                <br>
+                                <p>Fait à Libourne, le 04/06/2018</p>
+                        </div>               
+                        </div>
+            </mat-card-content>    
+    </mat-card>
+    <div class="column col-sm-1 col-lg-6">
+        <mat-card>
+            <mat-card-header>
+            <div mat-card-avatar class="header-image-calendrier"></div>
+            <mat-card-title>Mon calendrier</mat-card-title>
+            </mat-card-header>
+            <mat-card-content class="calendrier">
+                <div class="portrait">
+                    <p>Date: 15/06/2018</p>
+                    <P>Lieu: Saint-Christophe</P>
+                    <label class="entrainement">Entrainement</label>
+                </div>
+                <hr>
+                <div class="portrait">
+                        <p>Date: 21/06/2018</p>
+                        <P>Lieu: Libourne</P>
+                        <label class="competition">Compétition</label>
+                    </div>
+                <hr>
+                <div class="portrait">
+                        <p>Date: 23/06/2018</p>
+                        <P>Lieu: Saint-Christophe</P>
+                        <label class="entrainement">Entrainement</label>
+                    </div>
+                    <hr>
+            </mat-card-content>
+        </mat-card>
+        <mat-card>
+                <mat-card-header>
+                <div mat-card-avatar class="header-image-cotisation"></div>
+                <mat-card-title>Mes cotisations</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                        <table class="table">
+                                <thead>
+                                  <tr>
+                                    <th>Saison</th>
+                                    <th>Montant dû</th>
+                                    <th>Montant règlé</th>
+                                    <th>Facture</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>2016/2017</td>
+                                    <td>80.00 €</td>
+                                    <td>80.00 €</td>
+                                    <button type="button" (click)="generatePDF()" class="btn btn-primary active btn-sm">Editer</button>
+                                  </tr>
+                                  <tr>
+                                        <td>2017/2018</td>
+                                        <td>90.00 €</td>
+                                        <td>60.00 €</td>
+                                        <button type="button" class="btn btn-primary disabled btn-sm">Editer</button>
+                                  </tr>
+                                  
+                                </tbody>
+                              </table>
+                </mat-card-content>
+            </mat-card>
+        <mat-card>
+            <mat-card-header>
+            <div mat-card-avatar class="header-image-resultat"></div>
+            <mat-card-title>Mes résultats</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <mat-card class="resultat">
+                    <div class="joueur">
+                        <p class="joueur">Yann COLLET</p>
+                        <div class="affichage">11</div>
+                        <div class="affichage">09</div>
+                        <div class="affichage">11</div>
+                        <div class="affichage">15</div>
+                        <div class="affichage">11</div>
+                    </div>
+                    
+                    <div class="joueur">
+                            <p class="joueur">Denis CANAC</p>
+                            <div class="affichage">03</div>
+                            <div class="affichage">11</div>
+                            <div class="affichage">08</div>
+                            <div class="affichage">17</div>
+                            <div class="affichage">09</div>
+                        </div>
+                    
+                </mat-card>
+                <mat-card class="resultat">
+                        <div class="joueur">
+                            <p class="joueur">Yann COLLET</p>
+                            <div class="affichage">11</div>
+                            <div class="affichage">09</div>
+                            <div class="affichage">11</div>
+                            <div class="affichage">15</div>
+                            <div class="affichage">11</div>
+                        </div>
+                        <div class="joueur">
+                                <p class="joueur">Denis CANAC</p>
+                                <div class="affichage">03</div>
+                                <div class="affichage">11</div>
+                                <div class="affichage">08</div>
+                                <div class="affichage">17</div>
+                                <div class="affichage">09</div>
+                            </div>
+                        
                     </mat-card>
-                </div>
-                <div class="droite">
-                        <mat-card class="etatCivil">
-                                <mat-card-header class="titre">Prochains évennements</mat-card-header>
-                                <mat-card class="align" >
-                                    <div>Type: {{adherent.evenement1 }} </div>
-                                    <div>Date: {{adherent.dateEvenement1}}</div>
-                                    <div class="align">Lieu: {{adherent.lieuEvenement1}}</div>
-                                </mat-card>
-                                <mat-card class="align">
-                                    <div>Type: {{adherent.evenement2 }} </div>
-                                    <div class="align">Date: {{adherent.dateEvenement2}}</div>
-                                    <div class="align">Lieu: {{adherent.lieuEvenement2}}</div>
-                                </mat-card>
-                                <mat-card class="align">
-                                    <div>Type: {{adherent.evenement3 }}</div>
-                                    <div class="align">Date: {{adherent.dateEvenement3}}</div>
-                                    <div class="align">Lieu: {{adherent.lieuEvenement3}}</div>
-                                </mat-card>
-                        </mat-card>
-                        <mat-card class="etatCivil">
-                                <mat-card-header class="titre">Derniers résultats</mat-card-header>
-                                <mat-card-content><h5>Nom:</h5> {{adherent.nom }}</mat-card-content>
-                                <mat-card-content><h5>Prénom:</h5> {{adherent.prenom}}</mat-card-content>        
-                        </mat-card>
-                        <mat-card class="etatCivil">
-                                <mat-card-header class="titre">Mes cotisations</mat-card-header>
-                                <mat-card-content><h5>Nom:</h5> {{adherent.nom }}</mat-card-content>
-                                <mat-card-content><h5>Prénom:</h5> {{adherent.prenom}}</mat-card-content>
-                            <button (click)="generatePDF()">Editer</button>        
-                        </mat-card>
-                </div>
-            </div>
-
-        </div>
-
+            </mat-card-content>
+            </mat-card>
         
+    </div>
 </div>
-<div id="content" #content>
-        <h1 class="titre">FACTURE</h1> 
-        <p>_________________________________________________________________</p>
-        <br>
-        <p>Je soussigné, Christophe RENARD, agissant en tant que président</p>
-        <p>de l'espace associatif (association de loi 1901), certifie avoir </p>
-        <p>perçu au titre des cotisations, la somme de {{adherent.cotisations}}</p>
-        <p>de la part de {{ adherent.prenom }} {{ adherent.nom }}</p>
-        <br>
-        <br>
-        <p>Pour faire valoir ce que de droit.</p>
-        <br>
-        <p>Fait à Libourne, le 04/06/2018</p>
 </div>
+
+
+
+
+
+

@@ -1,48 +1,139 @@
-.parent {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-#content {
-    visibility: hidden;
-}
-
-.droite {
-    width: 100%;
-    display:flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.etatCivil {
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    margin: 10px;
-    padding: 10px;
-}
-
-.titre {
-    background-color: rgb(42, 42, 114);
-    color: white;
-    padding: 5px;
-}
-
-.gauche {
-    width: 100%;
+mat-card {
+    margin-bottom: 10px;
 }
 
 mat-card-content {
-    padding-top: 10px;
-    text-align: left;
+    margin-top: 20px;
 }
 
-.align {
+.row {
+    margin: 20px;
+    justify-content: space-between;
+}
+
+hr {
+    color:black;
+}
+
+.mep {
+    margin:20px;
+    background-color: rgb(173, 173, 204)
+}
+
+.joueur {
+    font-size: 1em;
+    vertical-align: middle;
+}
+
+.resultat {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.joueur {
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.affichage {
+    background-color: black;
+    color:white;
+    text-align: center;
+    width:30px;
+    height:30px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    vertical-align: middle;
+    font-size: 1.2em;
+    
+}
+
+.entrainement {
+    background-color: green;
+    padding:5px;
+    color:white;
+    
+}
+
+.competition {
+    background-color: rgb(173, 24, 37);
+    padding:5px;
+    color:white;
+    
+}
+
+.portrait {
     display:flex;
     flex-direction: row;
     justify-content: space-between;
-    text-align: left;
-    margin-top: 5px;
 }
+
+.portrait-element2 {
+    background-image: url(/assets/portrait.jpg);
+    background-size: cover;
+    width:5%;
+}
+
+button {
+    padding-top: 5px;
+}
+
+p {
+   
+    text-align: left;
+}
+
+.header-image-etatcivil {
+    background-image: url(/assets/etatcivil.png);
+    background-size: cover;
+}
+
+.header-image-calendrier {
+    background-image: url(/assets/calendrierbis.png);
+    background-size: cover;
+}
+
+.header-image-cotisation {
+    background-image: url(/assets/cotisation.png);
+    background-size: cover;
+}
+
+.header-image-resultat {
+    background-image: url(/assets/medaille.png);
+    background-size: cover;
+}
+
+fieldset 
+{
+    border: 1px solid #ddd !important;
+    margin: 0;
+    xmin-width: 0;
+    padding: 10px;       
+    position: relative;
+    border-radius:4px;
+    background-color:#f5f5f5;
+    padding-left:10px!important;
+    max-width: 85%!important;
+}	
+
+    legend
+    {
+        font-size:14px;
+        font-weight:bold;
+        margin-bottom: 0px; 
+        width: 35%; 
+        border: 1px solid #ddd;
+        border-radius: 4px; 
+        padding: 5px 5px 5px 10px; 
+        background-color: #ffffff;
+    }
+
+    .panel {
+        margin-top: 10px;
+    }
+
+    #content {
+        visibility: hidden;
+    }

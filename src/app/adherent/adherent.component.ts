@@ -2,6 +2,12 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Iadherent } from '../Iadherent';
 import { ElementRef } from '@angular/core';
 import * as jsPDF from 'jspdf';
+import { Adherent } from '../modeles';
+import { AdherentService } from '../adherent.service';
+import { Router } from '@angular/router';
+import { ApiService } from '../api.service';
+import { ActivatedRoute } from '@angular/router';
+import { ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-adherent',
@@ -9,6 +15,7 @@ import * as jsPDF from 'jspdf';
   styleUrls: ['./adherent.component.css']
 })
 export class AdherentComponent implements OnInit {
+
 
   @ViewChild('content') content:ElementRef
   public generatePDF() {
@@ -29,14 +36,34 @@ export class AdherentComponent implements OnInit {
     doc.save('facture.pdf');
 
   }
+  
+  public generatePDFBIS() {
+    return xepOnLine.Formatter.format('content', {render:'download'});
+  }
 
-  adherent=new Iadherent();
+  adherent=new Adherent();
+  id:string;
   
 
-  constructor() { }
+  constructor(private adherentService: AdherentService, 
+    private router: Router,
+    private apiService: ApiService,
+    private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.adherent.nom="COLLET";
+
+    this.route.paramMap.subscribe((params: ParamMap) => {
+      this.id = params.get('id');
+      const adherentId = parseInt(this.id, 10);
+  
+      
+      this.adherentService
+        .afficherAdherent(adherentId)
+        .subscribe(
+           adherent => (this.adherent = adherent),
+        );
+      });
+    /* this.adherent.nom="COLLET";
     this.adherent.prenom= "Yann";
     this.adherent.cotisations="80,00 Euros";
     this.adherent.adresse= "147 bis rue des vignes";
@@ -53,7 +80,7 @@ export class AdherentComponent implements OnInit {
     this.adherent.dateEvenement2="12/06/2018";
     this.adherent.evenement3="Entrainement";
     this.adherent.lieuEvenement3="Libourne";
-    this.adherent.dateEvenement3="18/06/2018";
+    this.adherent.dateEvenement3="18/06/2018"; */
     
   }
 

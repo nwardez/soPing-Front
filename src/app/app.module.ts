@@ -42,6 +42,7 @@ import { CreationTypeLicenceComponent } from './creation-type-licence/creation-t
 import { CreationPaiementComponent } from './creation-paiement/creation-paiement.component';
 import { MonComposantComponent } from './mon-composant/mon-composant.component';
 import { CreationAdhesionComponent } from './creation-adhesion/creation-adhesion.component';
+import { AdherentEditComponent } from './adherent-edit/adherent-edit.component';
 
 
 
@@ -77,7 +78,8 @@ import { CreationAdhesionComponent } from './creation-adhesion/creation-adhesion
     CreationTypeLicenceComponent,
     CreationPaiementComponent,
     MonComposantComponent,
-    CreationAdhesionComponent
+    CreationAdhesionComponent,
+    AdherentEditComponent
   ],
   imports: [
     BrowserModule,

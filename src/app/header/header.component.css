@@ -7,3 +7,8 @@
 .pad {
     padding-bottom: 10px;
 }
+
+.logo {
+    max-width:3%;
+	height: auto;
+}

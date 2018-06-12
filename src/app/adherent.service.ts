@@ -3,6 +3,9 @@ import { ApiService } from './api.service';
 import { HttpClient } from '@angular/common/http';
 import { Adherent } from './modeles';
 import { Observable } from 'rxjs/Observable';
+import { HttpHeaders } from '@angular/common/http';
+
+const httpOptions = {headers: new HttpHeaders({'Content-Type': 'application/json'})};
 
 @Injectable()
 export class AdherentService {
@@ -13,6 +16,8 @@ export class AdherentService {
 
   private adherentSelectionne: Adherent;
   private id;
+ 
+  
 
   creerAdherent(adherent: Adherent):Observable<Adherent> {
     console.log("service OK");
@@ -31,7 +36,8 @@ export class AdherentService {
     return this.api.supprimerAdherent(id);
   }
 
-  editerAdherent() {
-    return this.api.editerAdherent(this.adherentSelectionne, this.id);
+  editerAdherent(adherent: Adherent) {
+    return this.http.put<Adherent>('http://localhost:8080/adherent/' +
+    adherent.id, adherent, httpOptions) as Observable<Adherent>;
   }
 }

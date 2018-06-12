@@ -11,11 +11,12 @@
   .mep {
       display: flex;
       flex-direction: row;
+      justify-content: space-between;
 
   }
 
   .presentation {
-      margin: 20px;
+     margin:20px;
   }
 
   p {
